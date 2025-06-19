@@ -30,3 +30,28 @@ CREATE TABLE pedidos (
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (id_prato) REFERENCES pratos(id)
 );
+
+
+
+-- VERIFICA SE O USUARIO JÁ EXISTE NO BANCO DE DADOS.
+DELIMITER //
+
+CREATE PROCEDURE valicacao_cliente(IN PHP_email VARCHAR(90), IN PHP_telefone VARCHAR (20))
+BEGIN 
+SELECT email, telefone FROM clientes 
+WHERE PHP_email = email AND PHP_telefone = telefone;
+END//
+
+DELIMITER ;
+
+
+-- INSERE UM NOVO USUARIO, APÓS UMA VERIFsCAÇÃO
+DELIMITER //
+
+CREATE PROCEDURE inserir_cliente(IN PHP_nome VARCHAR(100), IN PHP_telefone VARCHAR(20), IN PHP_senha TEXT, IN PHP_endereco VARCHAR(100), IN PHP_email VARCHAR(90))
+BEGIN
+INSERT INTO clientes (nome, telefone, senha, endereco, email)
+VALUES(PHP_nome, PHP_telefone, PHP_senha, PHP_endereco,PHP_email);
+END//
+
+DELIMITER ;

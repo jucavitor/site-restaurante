@@ -13,8 +13,6 @@ print_r($email);
 print_r($senha);    
 }   
 else{
-
 }
- 
- 
+
  ?> 
