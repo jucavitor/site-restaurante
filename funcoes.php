@@ -17,14 +17,16 @@ function varifica_cliente($conexao,$nome,$telefone,$senha,$endereço,$email){
         //pode inserir, já que nao tem no banco
         $inserir = $conexao->prepare("CALL inserir_cliente(?,?,?,?,?)");
         $inserir->bind_param("sssss", $nome,$telefone,$senha,$endereço,$email);
+        if($inserir->execute()){
+            print("Cliente Cadastrado com Sucesso!");
+        }
+        else{
+            print("Erro ao cadastrar o Cliente". $inserir->error);
+        }
     }   
     else{
-        //não pode inserir, já possu e cadastro
+        //não pode inserir, já possu e cadastro 
+        print("Usuarios já cadastrados");
     }
-    
-
 }
-
-
-
 ?>
