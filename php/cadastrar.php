@@ -21,7 +21,6 @@ $senha = $_POST['senha'];
 //função de inserir no banco de dados o cliente
 verifica_cliente($conexao,$nome,$telefone,$senha,$endereco,$email);
 
-
 if($resultado=="sucesso"){
     $mensagem = "Parabéns, você foi cadastrado com sucesso!";
     $classe_mensagem = "sucesso";
