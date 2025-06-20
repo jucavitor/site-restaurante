@@ -19,7 +19,7 @@
 </nav>
 
 <main>
-    <h1>Cardápio do Dia - Marmitas</h1>
+    <h1>Cardápio do Dia - </h1>
     
     <form action="sistema.php" method="POST">
         <section class="marmitas">
