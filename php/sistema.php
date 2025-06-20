@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cardapio do dia</title>
-        <link rel="stylesheet" href="/css/sistema.css">
+        <link rel="stylesheet" href="../css/sistema.css">
     </head>
 <body>
 <nav>
@@ -14,7 +14,7 @@
   <a href="#">Configurações</a>
   <a href="carrinho.php">Meu pedidos</a>
   <a href="perfil.php" class="perfil">
-    <img src="imagens/usuario.jpg" alt="Perfil do Usuário" style="width: 30px; height: 30px; border-radius: 50%;" />
+    <img src="../imagens/usuario.jpg" alt="Perfil do Usuário" style="width: 30px; height: 30px; border-radius: 50%;" />
   </a>
 </nav>
 
