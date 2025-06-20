@@ -36,7 +36,7 @@
    </form>
 
    <footer>
-      <p>&copy; 2025 Restaurante Delicioso - Todos os direitos reservados</p>
+      <p>&copy; 2025 Restaurante Delicioso muitooo - Todos os direitos reservados</p>
    </footer>
    
 </body>
