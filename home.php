@@ -16,7 +16,7 @@
    </nav>
    <img src="imagens/restaurente.jpg" alt="">
    <footer>
-      <p>&copy; 2025 Restaurante Delicioso - Todos os direitos reservados</p>
+      <p>&copy; 2025 Restaurante Delicioso exemplo - Todos os direitos reservados</p>
    </footer>
 </body>
 </html>
