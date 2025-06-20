@@ -33,6 +33,7 @@ CREATE TABLE pedidos (
 
 
 
+
 -- VERIFICA SE O USUARIO JÁ EXISTE NO BANCO DE DADOS.
 DELIMITER //
 
@@ -55,3 +56,5 @@ VALUES(PHP_nome, PHP_telefone, PHP_senha, PHP_endereco,PHP_email);
 END//
 
 DELIMITER ;
+
+select * from clientes;

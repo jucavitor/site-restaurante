@@ -8,6 +8,8 @@ if(isset($_POST['submit'])){
 //print_r($_POST['senha']);
 
 include_once('config.php');
+include_once('funcoes.php');
+
 
 $nome = $_POST['nome'];
 $telefone = $_POST['telefone'];
@@ -16,7 +18,7 @@ $email = $_POST['email'];
 $senha = $_POST['senha'];
 
 
-$resultado = mysqli_query($conexao, "INSERT INTO clientes(nome, telefone, endereco, email, senha) VALUES ('$nome', '$telefone', '$endereco', '$email', '$senha')");
+    verifica_cliente($conexao,$nome,$telefone,$senha,$endereco,$email);
 
 }
 ?>

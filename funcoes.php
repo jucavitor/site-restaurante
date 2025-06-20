@@ -4,13 +4,12 @@
 include_once('config.php');
 // 01 CADASTRAR USUARIO AO BANCO DE DADOS
 
-function varifica_cliente($conexao,$nome,$telefone,$senha,$endereço,$email){
+function verifica_cliente($conexao,$nome,$telefone,$senha,$endereço,$email){
 
-    $verifica = $conexao->prepare("SELECT validacao_cliente(?, ?)");
+   $verifica = $conexao->prepare("CALL validacao_cliente(?, ?)");
     $verifica->bind_param("ss",$email, $telefone);
     $verifica->execute();
-    $verifica->bind_result($resultado);
-    $verifica->fetch();
+    $resultado = $verifica->get_result();
     $verifica->close();
 
     if ($resultado == 0 ){
@@ -19,6 +18,7 @@ function varifica_cliente($conexao,$nome,$telefone,$senha,$endereço,$email){
         $inserir->bind_param("sssss", $nome,$telefone,$senha,$endereço,$email);
         if($inserir->execute()){
             print("Cliente Cadastrado com Sucesso!");
+            $sucesso = "";
         }
         else{
             print("Erro ao cadastrar o Cliente". $inserir->error);
@@ -27,6 +27,6 @@ function varifica_cliente($conexao,$nome,$telefone,$senha,$endereço,$email){
     else{
         //não pode inserir, já possu e cadastro 
         print("Usuarios já cadastrados");
-    }
+    }   
 }
 ?>
